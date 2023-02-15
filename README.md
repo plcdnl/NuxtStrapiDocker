@@ -19,3 +19,9 @@ docker-compose up
 - Site [http://localhost/](http://localhost/) 
 - API (Products) [http://localhost/api/products](http://localhost/api/products)
 - API with Images [http://localhost/api/products?populate=*](http://localhost/api/products?populate=*)
+
+## Development
+```bash
+cd frontend
+yarn dev
+```

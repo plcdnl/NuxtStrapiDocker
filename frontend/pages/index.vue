@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div class="">
-      <code class="text-xs">{{ products }}</code>
-      <hr>
-    </div>
     <template v-if="products.length">
+      <div class="">
+        <code class="text-xs">{{ products }}</code>
+        <hr>
+      </div>
       <ul class="mt-14">
         <li v-for="product in products" :key="product.id" class="mb-14">
           <p class="text-lg"><code class="text-sm italic">product.attributes.Title</code>: {{ product.attributes.Title }}</p>
@@ -18,29 +18,29 @@
       </ul>
     </template>
     <template v-else>
-      Loading!
+      <div class="flex items-center justify-center h-screen text-lg font-bold text-red-700">Loading!!</div>
     </template>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
+  import axios from 'axios'
 
-export default {
-  data() {
-    return {
-      products: [],
+  export default {
+    data() {
+      return {
+        products: [],
+      }
+    },
+    created() {
+      axios
+        .get('http://localhost/api/products?populate=*')
+        .then(response => {
+          this.products = response.data.data
+        })
+        .catch(error => {
+          console.error(error)
+        })
     }
-  },
-  created() {
-    axios
-      .get('http://localhost/api/products?populate=*')
-      .then(response => {
-        this.products = response.data.data
-      })
-      .catch(error => {
-        console.error(error)
-      })
   }
-}
 </script>
