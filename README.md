@@ -17,4 +17,5 @@ docker-compose up
 
 ## Project links
 - Site [http://localhost/](http://localhost/) 
-- API [http://localhost/api](http://localhost/api)
+- API (Products) [http://localhost/api/products](http://localhost/api/products)
+- API with Images [http://localhost/api/products?populate=*](http://localhost/api/products?populate=*)
