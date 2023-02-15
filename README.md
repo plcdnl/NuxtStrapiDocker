@@ -25,3 +25,8 @@ docker-compose up
 cd frontend
 yarn dev
 ```
+
+---
+## To-Do
+- [ ] run dev/prod differently
+- [ ] i18n 
