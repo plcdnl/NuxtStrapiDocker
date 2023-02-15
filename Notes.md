@@ -1,5 +1,44 @@
 # Dev Notes
 
+## Nginx
+
+```nginx
+  location /api {
+    proxy_pass http://backend:1337/api;
+    include proxy_params;
+  }
+    
+  location /admin {
+    proxy_pass http://backend:1337/admin;
+    include proxy_params;
+  }
+    
+  location /i18n {
+    proxy_pass http://backend:1337/i18n;
+    include proxy_params;
+  }
+
+  location /content-manager {
+    proxy_pass http://backend:1337/content-manager;
+    include proxy_params;
+  }
+
+  location /content-type-builder {
+    proxy_pass http://backend:1337/content-type-builder;
+    include proxy_params;
+  }
+
+  location /users-permissions {
+    proxy_pass http://backend:1337/users-permissions;
+    include proxy_params;
+  }
+
+  location /upload {
+    proxy_pass http://backend:1337/upload;
+    include proxy_params;
+  }
+```
+
 ## Frontend
 
 ```dockerfile
